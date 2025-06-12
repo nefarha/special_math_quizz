@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:special_math_quizz/app/data/utils/asset_urls.dart';
 import 'package:special_math_quizz/app/data/utils/common_utils.dart';
+import 'package:special_math_quizz/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -46,19 +47,25 @@ class _PlayButton extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
-        borderRadius: BorderRadius.circular(25),
-        image: DecorationImage(
-          image: const AssetImage(AssetUrls.buttonBackground),
-          fit: BoxFit.cover,
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () {
+        Get.toNamed(Routes.QUIZ_LIST);
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white, width: 2),
+          borderRadius: BorderRadius.circular(25),
+          image: DecorationImage(
+            image: const AssetImage(AssetUrls.buttonBackground),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Text(
-        "Play",
-        style: CommonUtils.titleStyle.copyWith(color: Colors.white),
+        child: Text(
+          "Play",
+          style: CommonUtils.titleStyle.copyWith(color: Colors.white),
+        ),
       ),
     );
   }

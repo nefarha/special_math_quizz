@@ -1,0 +1,59 @@
+{
+    "data": [
+        {
+            "question": "Masukkan 3 apel ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 5,
+            "answer": 3
+        },
+        {
+            "question": "Pilih angka yang lebih kecil dari 6",
+            "action": "tap",
+            "options": [
+                8,
+                3,
+                7,
+                5
+            ],
+            "answer": 3,
+            "compare_to": 6
+        },
+        {
+            "question": "Pilih semua angka yang lebih kecil dari 10",
+            "action": "tapMultiple",
+            "options": [
+                12,
+                4,
+                7,
+                15,
+                9
+            ],
+            "answer": [
+                4,
+                7,
+                9
+            ],
+            "compare_to": 10
+        },
+        {
+            "question": "Masukkan 2 jeruk ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 4,
+            "answer": 2
+        },
+        {
+            "question": "Pilih angka yang lebih kecil dari 4",
+            "action": "tap",
+            "options": [
+                4,
+                2,
+                5,
+                7
+            ],
+            "answer": 2,
+            "compare_to": 4
+        }
+    ]
+}
