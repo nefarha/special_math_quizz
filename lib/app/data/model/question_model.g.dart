@@ -6,18 +6,20 @@ part of 'question_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Drag _$DragFromJson(Map<String, dynamic> json) => _Drag(
+Drag _$DragFromJson(Map<String, dynamic> json) => Drag(
+      level: (json['level'] as num).toInt(),
       question: json['question'] as String,
       action: $enumDecode(_$EQuizTypeEnumMap, json['action']),
-      object: json['object'] as String,
+      object: $enumDecode(_$EObjectTypeEnumMap, json['object']),
       available: (json['available'] as num).toInt(),
       answer: (json['answer'] as num).toInt(),
     );
 
-Map<String, dynamic> _$DragToJson(_Drag instance) => <String, dynamic>{
+Map<String, dynamic> _$DragToJson(Drag instance) => <String, dynamic>{
+      'level': instance.level,
       'question': instance.question,
       'action': _$EQuizTypeEnumMap[instance.action]!,
-      'object': instance.object,
+      'object': _$EObjectTypeEnumMap[instance.object]!,
       'available': instance.available,
       'answer': instance.answer,
     };
@@ -28,7 +30,15 @@ const _$EQuizTypeEnumMap = {
   EQuizType.drag: 'drag',
 };
 
-_Tap _$TapFromJson(Map<String, dynamic> json) => _Tap(
+const _$EObjectTypeEnumMap = {
+  EObjectType.apple: 'apple',
+  EObjectType.banana: 'banana',
+  EObjectType.orange: 'orange',
+  EObjectType.grape: 'grape',
+};
+
+Tap _$TapFromJson(Map<String, dynamic> json) => Tap(
+      level: (json['level'] as num).toInt(),
       question: json['question'] as String,
       action: $enumDecode(_$EQuizTypeEnumMap, json['action']),
       options: (json['options'] as List<dynamic>)
@@ -38,7 +48,8 @@ _Tap _$TapFromJson(Map<String, dynamic> json) => _Tap(
       compareTo: (json['compare_to'] as num).toInt(),
     );
 
-Map<String, dynamic> _$TapToJson(_Tap instance) => <String, dynamic>{
+Map<String, dynamic> _$TapToJson(Tap instance) => <String, dynamic>{
+      'level': instance.level,
       'question': instance.question,
       'action': _$EQuizTypeEnumMap[instance.action]!,
       'options': instance.options,
@@ -46,7 +57,8 @@ Map<String, dynamic> _$TapToJson(_Tap instance) => <String, dynamic>{
       'compare_to': instance.compareTo,
     };
 
-_TapMultiple _$TapMultipleFromJson(Map<String, dynamic> json) => _TapMultiple(
+TapMultiple _$TapMultipleFromJson(Map<String, dynamic> json) => TapMultiple(
+      level: (json['level'] as num).toInt(),
       question: json['question'] as String,
       action: $enumDecode(_$EQuizTypeEnumMap, json['action']),
       options: (json['options'] as List<dynamic>)
@@ -58,8 +70,9 @@ _TapMultiple _$TapMultipleFromJson(Map<String, dynamic> json) => _TapMultiple(
       compareTo: (json['compare_to'] as num).toInt(),
     );
 
-Map<String, dynamic> _$TapMultipleToJson(_TapMultiple instance) =>
+Map<String, dynamic> _$TapMultipleToJson(TapMultiple instance) =>
     <String, dynamic>{
+      'level': instance.level,
       'question': instance.question,
       'action': _$EQuizTypeEnumMap[instance.action]!,
       'options': instance.options,

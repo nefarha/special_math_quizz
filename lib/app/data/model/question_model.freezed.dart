@@ -15,11 +15,11 @@ T _$identity<T>(T value) => value;
 QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) {
   switch (json['action']) {
     case 'drag':
-      return _Drag.fromJson(json);
+      return Drag.fromJson(json);
     case 'tap':
-      return _Tap.fromJson(json);
+      return Tap.fromJson(json);
     case 'tapMultiple':
-      return _TapMultiple.fromJson(json);
+      return TapMultiple.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'action', 'QuestionModel',
@@ -29,6 +29,7 @@ QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuestionModel {
+  int get level;
   String get question;
   EQuizType get action;
   Object get answer;
@@ -49,6 +50,7 @@ mixin _$QuestionModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is QuestionModel &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             (identical(other.action, action) || other.action == action) &&
@@ -57,12 +59,12 @@ mixin _$QuestionModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, question, action,
+  int get hashCode => Object.hash(runtimeType, level, question, action,
       const DeepCollectionEquality().hash(answer));
 
   @override
   String toString() {
-    return 'QuestionModel(question: $question, action: $action, answer: $answer)';
+    return 'QuestionModel(level: $level, question: $question, action: $action, answer: $answer)';
   }
 }
 
@@ -72,7 +74,7 @@ abstract mixin class $QuestionModelCopyWith<$Res> {
           QuestionModel value, $Res Function(QuestionModel) _then) =
       _$QuestionModelCopyWithImpl;
   @useResult
-  $Res call({String question, EQuizType action});
+  $Res call({int level, String question, EQuizType action});
 }
 
 /// @nodoc
@@ -88,10 +90,15 @@ class _$QuestionModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? level = null,
     Object? question = null,
     Object? action = null,
   }) {
     return _then(_self.copyWith(
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
       question: null == question
           ? _self.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -106,20 +113,23 @@ class _$QuestionModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _Drag implements QuestionModel {
-  const _Drag(
-      {required this.question,
+class Drag implements QuestionModel {
+  const Drag(
+      {required this.level,
+      required this.question,
       required this.action,
       required this.object,
       required this.available,
       required this.answer});
-  factory _Drag.fromJson(Map<String, dynamic> json) => _$DragFromJson(json);
+  factory Drag.fromJson(Map<String, dynamic> json) => _$DragFromJson(json);
 
+  @override
+  final int level;
   @override
   final String question;
   @override
   final EQuizType action;
-  final String object;
+  final EObjectType object;
   final int available;
   @override
   final int answer;
@@ -129,8 +139,8 @@ class _Drag implements QuestionModel {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$DragCopyWith<_Drag> get copyWith =>
-      __$DragCopyWithImpl<_Drag>(this, _$identity);
+  $DragCopyWith<Drag> get copyWith =>
+      _$DragCopyWithImpl<Drag>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -143,7 +153,8 @@ class _Drag implements QuestionModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Drag &&
+            other is Drag &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             (identical(other.action, action) || other.action == action) &&
@@ -155,49 +166,55 @@ class _Drag implements QuestionModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, question, action, object, available, answer);
+  int get hashCode => Object.hash(
+      runtimeType, level, question, action, object, available, answer);
 
   @override
   String toString() {
-    return 'QuestionModel.drag(question: $question, action: $action, object: $object, available: $available, answer: $answer)';
+    return 'QuestionModel.drag(level: $level, question: $question, action: $action, object: $object, available: $available, answer: $answer)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$DragCopyWith<$Res>
+abstract mixin class $DragCopyWith<$Res>
     implements $QuestionModelCopyWith<$Res> {
-  factory _$DragCopyWith(_Drag value, $Res Function(_Drag) _then) =
-      __$DragCopyWithImpl;
+  factory $DragCopyWith(Drag value, $Res Function(Drag) _then) =
+      _$DragCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String question,
+      {int level,
+      String question,
       EQuizType action,
-      String object,
+      EObjectType object,
       int available,
       int answer});
 }
 
 /// @nodoc
-class __$DragCopyWithImpl<$Res> implements _$DragCopyWith<$Res> {
-  __$DragCopyWithImpl(this._self, this._then);
+class _$DragCopyWithImpl<$Res> implements $DragCopyWith<$Res> {
+  _$DragCopyWithImpl(this._self, this._then);
 
-  final _Drag _self;
-  final $Res Function(_Drag) _then;
+  final Drag _self;
+  final $Res Function(Drag) _then;
 
   /// Create a copy of QuestionModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? level = null,
     Object? question = null,
     Object? action = null,
     Object? object = null,
     Object? available = null,
     Object? answer = null,
   }) {
-    return _then(_Drag(
+    return _then(Drag(
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
       question: null == question
           ? _self.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -209,7 +226,7 @@ class __$DragCopyWithImpl<$Res> implements _$DragCopyWith<$Res> {
       object: null == object
           ? _self.object
           : object // ignore: cast_nullable_to_non_nullable
-              as String,
+              as EObjectType,
       available: null == available
           ? _self.available
           : available // ignore: cast_nullable_to_non_nullable
@@ -224,16 +241,19 @@ class __$DragCopyWithImpl<$Res> implements _$DragCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Tap implements QuestionModel {
-  const _Tap(
-      {required this.question,
+class Tap implements QuestionModel {
+  const Tap(
+      {required this.level,
+      required this.question,
       required this.action,
       required final List<int> options,
       required this.answer,
       required this.compareTo})
       : _options = options;
-  factory _Tap.fromJson(Map<String, dynamic> json) => _$TapFromJson(json);
+  factory Tap.fromJson(Map<String, dynamic> json) => _$TapFromJson(json);
 
+  @override
+  final int level;
   @override
   final String question;
   @override
@@ -254,8 +274,7 @@ class _Tap implements QuestionModel {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$TapCopyWith<_Tap> get copyWith =>
-      __$TapCopyWithImpl<_Tap>(this, _$identity);
+  $TapCopyWith<Tap> get copyWith => _$TapCopyWithImpl<Tap>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -268,7 +287,8 @@ class _Tap implements QuestionModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Tap &&
+            other is Tap &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             (identical(other.action, action) || other.action == action) &&
@@ -280,24 +300,24 @@ class _Tap implements QuestionModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, question, action,
+  int get hashCode => Object.hash(runtimeType, level, question, action,
       const DeepCollectionEquality().hash(_options), answer, compareTo);
 
   @override
   String toString() {
-    return 'QuestionModel.tap(question: $question, action: $action, options: $options, answer: $answer, compareTo: $compareTo)';
+    return 'QuestionModel.tap(level: $level, question: $question, action: $action, options: $options, answer: $answer, compareTo: $compareTo)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$TapCopyWith<$Res>
+abstract mixin class $TapCopyWith<$Res>
     implements $QuestionModelCopyWith<$Res> {
-  factory _$TapCopyWith(_Tap value, $Res Function(_Tap) _then) =
-      __$TapCopyWithImpl;
+  factory $TapCopyWith(Tap value, $Res Function(Tap) _then) = _$TapCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String question,
+      {int level,
+      String question,
       EQuizType action,
       List<int> options,
       int answer,
@@ -305,24 +325,29 @@ abstract mixin class _$TapCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TapCopyWithImpl<$Res> implements _$TapCopyWith<$Res> {
-  __$TapCopyWithImpl(this._self, this._then);
+class _$TapCopyWithImpl<$Res> implements $TapCopyWith<$Res> {
+  _$TapCopyWithImpl(this._self, this._then);
 
-  final _Tap _self;
-  final $Res Function(_Tap) _then;
+  final Tap _self;
+  final $Res Function(Tap) _then;
 
   /// Create a copy of QuestionModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? level = null,
     Object? question = null,
     Object? action = null,
     Object? options = null,
     Object? answer = null,
     Object? compareTo = null,
   }) {
-    return _then(_Tap(
+    return _then(Tap(
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
       question: null == question
           ? _self.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -349,18 +374,21 @@ class __$TapCopyWithImpl<$Res> implements _$TapCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _TapMultiple implements QuestionModel {
-  const _TapMultiple(
-      {required this.question,
+class TapMultiple implements QuestionModel {
+  const TapMultiple(
+      {required this.level,
+      required this.question,
       required this.action,
       required final List<int> options,
       required final List<int> answer,
       required this.compareTo})
       : _options = options,
         _answer = answer;
-  factory _TapMultiple.fromJson(Map<String, dynamic> json) =>
+  factory TapMultiple.fromJson(Map<String, dynamic> json) =>
       _$TapMultipleFromJson(json);
 
+  @override
+  final int level;
   @override
   final String question;
   @override
@@ -387,8 +415,8 @@ class _TapMultiple implements QuestionModel {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$TapMultipleCopyWith<_TapMultiple> get copyWith =>
-      __$TapMultipleCopyWithImpl<_TapMultiple>(this, _$identity);
+  $TapMultipleCopyWith<TapMultiple> get copyWith =>
+      _$TapMultipleCopyWithImpl<TapMultiple>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -401,7 +429,8 @@ class _TapMultiple implements QuestionModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TapMultiple &&
+            other is TapMultiple &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             (identical(other.action, action) || other.action == action) &&
@@ -415,6 +444,7 @@ class _TapMultiple implements QuestionModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      level,
       question,
       action,
       const DeepCollectionEquality().hash(_options),
@@ -423,20 +453,21 @@ class _TapMultiple implements QuestionModel {
 
   @override
   String toString() {
-    return 'QuestionModel.tapMultiple(question: $question, action: $action, options: $options, answer: $answer, compareTo: $compareTo)';
+    return 'QuestionModel.tapMultiple(level: $level, question: $question, action: $action, options: $options, answer: $answer, compareTo: $compareTo)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$TapMultipleCopyWith<$Res>
+abstract mixin class $TapMultipleCopyWith<$Res>
     implements $QuestionModelCopyWith<$Res> {
-  factory _$TapMultipleCopyWith(
-          _TapMultiple value, $Res Function(_TapMultiple) _then) =
-      __$TapMultipleCopyWithImpl;
+  factory $TapMultipleCopyWith(
+          TapMultiple value, $Res Function(TapMultiple) _then) =
+      _$TapMultipleCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String question,
+      {int level,
+      String question,
       EQuizType action,
       List<int> options,
       List<int> answer,
@@ -444,24 +475,29 @@ abstract mixin class _$TapMultipleCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TapMultipleCopyWithImpl<$Res> implements _$TapMultipleCopyWith<$Res> {
-  __$TapMultipleCopyWithImpl(this._self, this._then);
+class _$TapMultipleCopyWithImpl<$Res> implements $TapMultipleCopyWith<$Res> {
+  _$TapMultipleCopyWithImpl(this._self, this._then);
 
-  final _TapMultiple _self;
-  final $Res Function(_TapMultiple) _then;
+  final TapMultiple _self;
+  final $Res Function(TapMultiple) _then;
 
   /// Create a copy of QuestionModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? level = null,
     Object? question = null,
     Object? action = null,
     Object? options = null,
     Object? answer = null,
     Object? compareTo = null,
   }) {
-    return _then(_TapMultiple(
+    return _then(TapMultiple(
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
       question: null == question
           ? _self.question
           : question // ignore: cast_nullable_to_non_nullable

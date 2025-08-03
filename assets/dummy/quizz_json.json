@@ -1,6 +1,7 @@
 {
     "data": [
         {
+            "level": 1,
             "question": "Masukkan 3 apel ke dalam keranjang",
             "action": "drag",
             "object": "apple",
@@ -8,6 +9,7 @@
             "answer": 3
         },
         {
+            "level": 2,
             "question": "Pilih angka yang lebih kecil dari 6",
             "action": "tap",
             "options": [
@@ -20,6 +22,7 @@
             "compare_to": 6
         },
         {
+            "level": 3,
             "question": "Pilih semua angka yang lebih kecil dari 10",
             "action": "tapMultiple",
             "options": [
@@ -37,6 +40,7 @@
             "compare_to": 10
         },
         {
+            "level": 4,
             "question": "Masukkan 2 jeruk ke dalam keranjang",
             "action": "drag",
             "object": "orange",
@@ -44,6 +48,7 @@
             "answer": 2
         },
         {
+            "level": 5,
             "question": "Pilih angka yang lebih kecil dari 4",
             "action": "tap",
             "options": [
