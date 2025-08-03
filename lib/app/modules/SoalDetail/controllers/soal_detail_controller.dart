@@ -51,6 +51,27 @@ class SoalDetailController extends GetxController with LoadingState {
     isLoading.value = false;
   }
 
+  // Tap Section
+  submitTapAnswer({required int value, required int comparedTo}) async {
+    isLoading.value = true;
+    await Future.delayed(Duration(seconds: 2));
+    if (value < comparedTo) {
+      var submitResult =
+          await quizzRepositories.saveAnswered(level: model.level);
+      submitResult.match(
+        (l) {
+          debugPrint('assda $l');
+        },
+        (r) {
+          showRightBanner.value = true;
+        },
+      );
+    } else {
+      showWrongBanner.value = true;
+    }
+    isLoading.value = false;
+  }
+
   initModelValue() {
     switch (model.action) {
       case EQuizType.drag:

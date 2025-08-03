@@ -23,7 +23,8 @@ class SoalDetailView extends GetView<SoalDetailController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColourPalette.creamColour,
-        title: Text(controller.model.action.viewName),
+        title: Text(controller.model.level.toString(),
+            style: CommonUtils.titleStyle),
         centerTitle: true,
       ),
       body: Obx(
@@ -38,15 +39,41 @@ class SoalDetailView extends GetView<SoalDetailController> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: switch (controller.model.action) {
-                EQuizType.drag => QuizDragView(
-                    model: controller.model as Drag,
-                  ),
-                EQuizType.tap => QuizTapView(),
-                EQuizType.tapMultiple => QuizMultipleView(),
-              },
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  spacing: 20,
+                  children: [
+                    SizedBox(),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: ColourPalette.creamColour.withAlpha(180),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: Text(
+                        controller.model.question,
+                        style: CommonUtils.titleStyle
+                            .copyWith(color: Colors.black),
+                      ),
+                    ).asGlass(
+                      clipBehaviour: Clip.antiAlias,
+                      clipBorderRadius: BorderRadius.circular(25),
+                      blurX: 8,
+                      blurY: 8,
+                    ),
+                    Flexible(
+                      child: switch (controller.model.action) {
+                        EQuizType.drag => QuizDragView(
+                            model: controller.model as Drag,
+                          ),
+                        EQuizType.tap =>
+                          QuizTapView(model: controller.model as Tap),
+                        EQuizType.tapMultiple => QuizMultipleView(),
+                      },
+                    )
+                  ],
+                )),
             if (controller.showWrongBanner.value)
               Center(
                 child: Container(

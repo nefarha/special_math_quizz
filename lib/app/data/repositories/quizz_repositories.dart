@@ -12,6 +12,7 @@ class QuizzRepositories {
 
       return right(result);
     } catch (e) {
+      print('get answered $e');
       return left('Maaf, Sepertinya ada kesalahan');
     }
   }
@@ -23,8 +24,8 @@ class QuizzRepositories {
       Set<int> listLevel = {level};
 
       if (result != null) {
-        Set<int>.from(result);
-        listLevel.addAll(result);
+        var setsResult = Set<int>.from(result);
+        listLevel.addAll(setsResult);
       }
 
       List<int> listedSet = List<int>.from(listLevel);
@@ -32,6 +33,7 @@ class QuizzRepositories {
       _box.write('answered', listedSet);
       return right(unit);
     } catch (e) {
+      print('save answer $e');
       return left('Maaf, Sepertinya ada kesalahan');
     }
   }

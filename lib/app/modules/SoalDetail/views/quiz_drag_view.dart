@@ -10,24 +10,6 @@ class QuizDragView extends GetView<SoalDetailController> {
     return Column(
       spacing: 20,
       children: [
-        SizedBox(),
-        Container(
-          width: double.infinity,
-          padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: ColourPalette.creamColour.withAlpha(180),
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Text(
-            controller.model.question,
-            style: CommonUtils.titleStyle.copyWith(color: Colors.black),
-          ),
-        ).asGlass(
-          clipBehaviour: Clip.antiAlias,
-          clipBorderRadius: BorderRadius.circular(25),
-          blurX: 8,
-          blurY: 8,
-        ),
         Flexible(
           child: DragTarget<EObjectType>(
             onAcceptWithDetails: (details) {

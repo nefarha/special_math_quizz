@@ -27,6 +27,7 @@ class QuizListController extends GetxController {
   }
 
   Future getAnsweredQuizz() async {
+    optionOrQuizz.value = none();
     var result = await quizzRepositories.getAnsweredQuizz();
 
     result.match(

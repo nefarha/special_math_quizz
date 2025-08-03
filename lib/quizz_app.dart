@@ -15,7 +15,7 @@ class QuizzApp extends StatelessWidget {
       getPages: AppPages.routes,
       defaultTransition: Transition.cupertino,
       theme: ThemeData(
-        textTheme: GoogleFonts.pixelifySansTextTheme(),
+        textTheme: GoogleFonts.ubuntuTextTheme(),
       ),
     );
   }

@@ -39,7 +39,6 @@ class QuizListView extends GetView<QuizListController> {
                   (r) => Column(
                     spacing: 10,
                     children: [
-                      Text(r.toString()),
                       Container(
                         width: double.infinity,
                         padding:
