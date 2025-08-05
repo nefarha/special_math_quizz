@@ -20,6 +20,8 @@ QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) {
       return Tap.fromJson(json);
     case 'tapMultiple':
       return TapMultiple.fromJson(json);
+    case 'calculate':
+      return Calculate.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'action', 'QuestionModel',
@@ -247,6 +249,7 @@ class Tap implements QuestionModel {
       required this.question,
       required this.action,
       required final List<int> options,
+      required this.actionTapType,
       required this.answer,
       required this.compareTo})
       : _options = options;
@@ -265,6 +268,7 @@ class Tap implements QuestionModel {
     return EqualUnmodifiableListView(_options);
   }
 
+  final EActionTapType actionTapType;
   @override
   final int answer;
   final int compareTo;
@@ -293,6 +297,8 @@ class Tap implements QuestionModel {
                 other.question == question) &&
             (identical(other.action, action) || other.action == action) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
+            (identical(other.actionTapType, actionTapType) ||
+                other.actionTapType == actionTapType) &&
             (identical(other.answer, answer) || other.answer == answer) &&
             (identical(other.compareTo, compareTo) ||
                 other.compareTo == compareTo));
@@ -300,12 +306,19 @@ class Tap implements QuestionModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, level, question, action,
-      const DeepCollectionEquality().hash(_options), answer, compareTo);
+  int get hashCode => Object.hash(
+      runtimeType,
+      level,
+      question,
+      action,
+      const DeepCollectionEquality().hash(_options),
+      actionTapType,
+      answer,
+      compareTo);
 
   @override
   String toString() {
-    return 'QuestionModel.tap(level: $level, question: $question, action: $action, options: $options, answer: $answer, compareTo: $compareTo)';
+    return 'QuestionModel.tap(level: $level, question: $question, action: $action, options: $options, actionTapType: $actionTapType, answer: $answer, compareTo: $compareTo)';
   }
 }
 
@@ -320,6 +333,7 @@ abstract mixin class $TapCopyWith<$Res>
       String question,
       EQuizType action,
       List<int> options,
+      EActionTapType actionTapType,
       int answer,
       int compareTo});
 }
@@ -340,6 +354,7 @@ class _$TapCopyWithImpl<$Res> implements $TapCopyWith<$Res> {
     Object? question = null,
     Object? action = null,
     Object? options = null,
+    Object? actionTapType = null,
     Object? answer = null,
     Object? compareTo = null,
   }) {
@@ -360,6 +375,10 @@ class _$TapCopyWithImpl<$Res> implements $TapCopyWith<$Res> {
           ? _self._options
           : options // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      actionTapType: null == actionTapType
+          ? _self.actionTapType
+          : actionTapType // ignore: cast_nullable_to_non_nullable
+              as EActionTapType,
       answer: null == answer
           ? _self.answer
           : answer // ignore: cast_nullable_to_non_nullable
@@ -517,6 +536,141 @@ class _$TapMultipleCopyWithImpl<$Res> implements $TapMultipleCopyWith<$Res> {
       compareTo: null == compareTo
           ? _self.compareTo
           : compareTo // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class Calculate implements QuestionModel {
+  const Calculate(
+      {required this.level,
+      required this.question,
+      required this.action,
+      required final List<int> options,
+      required this.method,
+      required this.answer})
+      : _options = options;
+  factory Calculate.fromJson(Map<String, dynamic> json) =>
+      _$CalculateFromJson(json);
+
+  @override
+  final int level;
+  @override
+  final String question;
+  @override
+  final EQuizType action;
+  final List<int> _options;
+  List<int> get options {
+    if (_options is EqualUnmodifiableListView) return _options;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_options);
+  }
+
+  final EActionCalculateType method;
+  @override
+  final int answer;
+
+  /// Create a copy of QuestionModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CalculateCopyWith<Calculate> get copyWith =>
+      _$CalculateCopyWithImpl<Calculate>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CalculateToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Calculate &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.question, question) ||
+                other.question == question) &&
+            (identical(other.action, action) || other.action == action) &&
+            const DeepCollectionEquality().equals(other._options, _options) &&
+            (identical(other.method, method) || other.method == method) &&
+            (identical(other.answer, answer) || other.answer == answer));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, level, question, action,
+      const DeepCollectionEquality().hash(_options), method, answer);
+
+  @override
+  String toString() {
+    return 'QuestionModel.calculate(level: $level, question: $question, action: $action, options: $options, method: $method, answer: $answer)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CalculateCopyWith<$Res>
+    implements $QuestionModelCopyWith<$Res> {
+  factory $CalculateCopyWith(Calculate value, $Res Function(Calculate) _then) =
+      _$CalculateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int level,
+      String question,
+      EQuizType action,
+      List<int> options,
+      EActionCalculateType method,
+      int answer});
+}
+
+/// @nodoc
+class _$CalculateCopyWithImpl<$Res> implements $CalculateCopyWith<$Res> {
+  _$CalculateCopyWithImpl(this._self, this._then);
+
+  final Calculate _self;
+  final $Res Function(Calculate) _then;
+
+  /// Create a copy of QuestionModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? level = null,
+    Object? question = null,
+    Object? action = null,
+    Object? options = null,
+    Object? method = null,
+    Object? answer = null,
+  }) {
+    return _then(Calculate(
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
+      question: null == question
+          ? _self.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String,
+      action: null == action
+          ? _self.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as EQuizType,
+      options: null == options
+          ? _self._options
+          : options // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      method: null == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as EActionCalculateType,
+      answer: null == answer
+          ? _self.answer
+          : answer // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }

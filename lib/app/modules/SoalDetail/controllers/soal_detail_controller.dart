@@ -1,13 +1,21 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_confetti/flutter_confetti.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:get/get.dart';
+import 'package:special_math_quizz/app/data/enums/e_action_tap_type.dart';
 import 'package:special_math_quizz/app/data/enums/e_quiz_type.dart';
 import 'package:special_math_quizz/app/data/model/question_model.dart';
 import 'package:special_math_quizz/app/data/repositories/quizz_repositories.dart';
+import 'package:special_math_quizz/app/data/utils/asset_urls.dart';
 import 'package:special_math_quizz/app/data/utils/public_mixin.dart';
+import 'dart:collection';
 
 class SoalDetailController extends GetxController with LoadingState {
   final QuestionModel model = Get.arguments as QuestionModel;
   final quizzRepositories = QuizzRepositories();
+  final _audioPlayer = AudioPlayer();
 
   /// Global Condition ///
   final showWrongBanner = false.obs;
@@ -31,17 +39,30 @@ class SoalDetailController extends GetxController with LoadingState {
     }
   }
 
-  submitDragAnswer() async {
+  submitDragAnswer({required BuildContext context}) async {
     isLoading.value = true;
-    await Future.delayed(Duration(seconds: 2));
+    if (_audioPlayer.state == PlayerState.playing) {
+      await _audioPlayer.stop();
+    }
+
     if (count.value == model.answer) {
       var submitResult =
           await quizzRepositories.saveAnswered(level: model.level);
       submitResult.match(
-        (l) {
+        (l) async {
+          await _audioPlayer.play(AssetSource(AssetUrls.failSound),
+              volume: 1.0);
           debugPrint('assda $l');
         },
-        (r) {
+        (r) async {
+          await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
+              volume: 1.0);
+          Confetti.launch(context,
+              options: ConfettiOptions(
+                particleCount: 100,
+                spread: 100,
+                angle: 90,
+              ));
           showRightBanner.value = true;
         },
       );
@@ -52,23 +73,136 @@ class SoalDetailController extends GetxController with LoadingState {
   }
 
   // Tap Section
-  submitTapAnswer({required int value, required int comparedTo}) async {
+  submitTapAnswer(
+      {required int value,
+      required int comparedTo,
+      required BuildContext context}) async {
     isLoading.value = true;
-    await Future.delayed(Duration(seconds: 2));
-    if (value < comparedTo) {
+
+    Tap tap = model as Tap;
+    var calculateLesser = value < comparedTo;
+    var calculateGreater = value > comparedTo;
+    if (tap.actionTapType == EActionTapType.lesser
+        ? calculateLesser
+        : calculateGreater) {
       var submitResult =
           await quizzRepositories.saveAnswered(level: model.level);
       submitResult.match(
-        (l) {
+        (l) async {
+          await _audioPlayer.play(AssetSource(AssetUrls.failSound),
+              volume: 1.0);
           debugPrint('assda $l');
         },
-        (r) {
+        (r) async {
+          await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
+              volume: 1.0);
+          Confetti.launch(context,
+              options: ConfettiOptions(
+                particleCount: 100,
+                spread: 100,
+                angle: 90,
+              ));
           showRightBanner.value = true;
         },
       );
     } else {
       showWrongBanner.value = true;
     }
+    isLoading.value = false;
+  }
+
+  // Tap Multiple Section
+  final selectedItem = RxList<int>();
+
+  selectItem({required int value}) {
+    if (selectedItem.contains(value)) {
+      selectedItem.remove(value);
+    } else {
+      selectedItem.add(value);
+    }
+  }
+
+  submitTapMultipleAnswer(
+      {required BuildContext context, required int targetValue}) async {
+    isLoading.value = true;
+    var answeredModel = List<int>.from(model.answer as List);
+    var sortedSelectedItem = List<int>.from(selectedItem);
+
+    answeredModel.sort();
+    sortedSelectedItem.sort();
+
+    if (answeredModel.length == sortedSelectedItem.length) {
+      if (listEquals(answeredModel, sortedSelectedItem)) {
+        var submitResult =
+            await quizzRepositories.saveAnswered(level: model.level);
+        submitResult.match(
+          (l) async {
+            await _audioPlayer.play(AssetSource(AssetUrls.failSound),
+                volume: 1.0);
+            debugPrint('assda $l');
+          },
+          (r) async {
+            await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
+                volume: 1.0);
+            Confetti.launch(context,
+                options: ConfettiOptions(
+                  particleCount: 100,
+                  spread: 100,
+                  angle: 90,
+                ));
+            showRightBanner.value = true;
+          },
+        );
+      }
+    } else {
+      showWrongBanner.value = true;
+    }
+
+    isLoading.value = false;
+  }
+
+  // For Calculate
+  final answerController = TextEditingController();
+
+  submitCalculateAnswer({required BuildContext context}) async {
+    isLoading.value = true;
+
+    var answer = num.tryParse(answerController.text);
+    print(answer);
+    print(model.answer);
+
+    if (answer == null) {
+      await _audioPlayer.play(AssetSource(AssetUrls.failSound), volume: 1.0);
+      showWrongBanner.value = true;
+      isLoading.value = false;
+      return;
+    }
+
+    if (answer == num.parse(model.answer.toString())) {
+      var submitResult =
+          await quizzRepositories.saveAnswered(level: model.level);
+      submitResult.match(
+        (l) async {
+          await _audioPlayer.play(AssetSource(AssetUrls.failSound),
+              volume: 1.0);
+          debugPrint('assda $l');
+        },
+        (r) async {
+          await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
+              volume: 1.0);
+          Confetti.launch(context,
+              options: ConfettiOptions(
+                particleCount: 100,
+                spread: 100,
+                angle: 90,
+              ));
+          showRightBanner.value = true;
+        },
+      );
+    } else {
+      showWrongBanner.value = true;
+    }
+
     isLoading.value = false;
   }
 
@@ -81,6 +215,9 @@ class SoalDetailController extends GetxController with LoadingState {
         // available.value = (model as Tap).available;
         break;
       case EQuizType.tapMultiple:
+        // available.value = (model as TapMultiple).available;
+        break;
+      case EQuizType.calculate:
         // available.value = (model as TapMultiple).available;
         break;
     }

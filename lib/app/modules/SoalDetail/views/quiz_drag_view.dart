@@ -116,7 +116,7 @@ class QuizDragView extends GetView<SoalDetailController> {
               : GestureDetector(
                   behavior: HitTestBehavior.translucent,
                   onTap: () async {
-                    await controller.submitDragAnswer();
+                    await controller.submitDragAnswer(context: context);
                   },
                   child: Container(
                     width: double.infinity,

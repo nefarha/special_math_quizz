@@ -2,7 +2,7 @@
     "data": [
         {
             "level": 1,
-            "question": "Masukkan 3 apel ke dalam keranjang",
+            "question": "Masukkan 3 apple ke dalam keranjang",
             "action": "drag",
             "object": "apple",
             "available": 5,
@@ -10,55 +10,2392 @@
         },
         {
             "level": 2,
-            "question": "Pilih angka yang lebih kecil dari 6",
+            "question": "Pilih angka yang lebih kecil dari 8",
             "action": "tap",
+            "action_tap_type": "lesser",
             "options": [
-                8,
-                3,
-                7,
-                5
+                9,
+                5,
+                10,
+                12
             ],
-            "answer": 3,
-            "compare_to": 6
+            "answer": 5,
+            "compare_to": 8
         },
         {
             "level": 3,
-            "question": "Pilih semua angka yang lebih kecil dari 10",
-            "action": "tapMultiple",
+            "question": "12 + 8",
+            "action": "calculate",
             "options": [
                 12,
-                4,
-                7,
-                15,
-                9
+                8
             ],
-            "answer": [
-                4,
-                7,
-                9
-            ],
-            "compare_to": 10
+            "method": "add",
+            "answer": 20
         },
         {
             "level": 4,
-            "question": "Masukkan 2 jeruk ke dalam keranjang",
-            "action": "drag",
-            "object": "orange",
-            "available": 4,
-            "answer": 2
+            "question": "Pilih semua angka yang lebih kecil dari 15",
+            "action": "tapMultiple",
+            "options": [
+                18,
+                12,
+                9,
+                20,
+                6
+            ],
+            "answer": [
+                12,
+                9,
+                6
+            ],
+            "compare_to": 15
         },
         {
             "level": 5,
-            "question": "Pilih angka yang lebih kecil dari 4",
+            "question": "Masukkan 4 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 7,
+            "answer": 4
+        },
+        {
+            "level": 6,
+            "question": "Pilih angka yang lebih besar dari 7",
             "action": "tap",
+            "action_tap_type": "greater",
             "options": [
-                4,
-                2,
                 5,
+                9,
+                3,
+                6
+            ],
+            "answer": 9,
+            "compare_to": 7
+        },
+        {
+            "level": 7,
+            "question": "25 - 13",
+            "action": "calculate",
+            "options": [
+                25,
+                13
+            ],
+            "method": "substract",
+            "answer": 12
+        },
+        {
+            "level": 8,
+            "question": "Masukkan 2 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 6,
+            "answer": 2
+        },
+        {
+            "level": 9,
+            "question": "Pilih semua angka yang lebih besar dari 8",
+            "action": "tapMultiple",
+            "options": [
+                7,
+                12,
+                15,
+                5,
+                11
+            ],
+            "answer": [
+                12,
+                15,
+                11
+            ],
+            "compare_to": 8
+        },
+        {
+            "level": 10,
+            "question": "6 × 4",
+            "action": "calculate",
+            "options": [
+                6,
+                4
+            ],
+            "method": "multiply",
+            "answer": 24
+        },
+        {
+            "level": 11,
+            "question": "Pilih angka yang lebih kecil dari 12",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                15,
+                8,
+                14,
+                16
+            ],
+            "answer": 8,
+            "compare_to": 12
+        },
+        {
+            "level": 12,
+            "question": "Masukkan 5 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 8,
+            "answer": 5
+        },
+        {
+            "level": 13,
+            "question": "36 ÷ 6",
+            "action": "calculate",
+            "options": [
+                36,
+                6
+            ],
+            "method": "divide",
+            "answer": 6
+        },
+        {
+            "level": 14,
+            "question": "Pilih semua angka yang lebih kecil dari 20",
+            "action": "tapMultiple",
+            "options": [
+                25,
+                16,
+                18,
+                22,
+                14
+            ],
+            "answer": [
+                16,
+                18,
+                14
+            ],
+            "compare_to": 20
+        },
+        {
+            "level": 15,
+            "question": "Pilih angka yang lebih besar dari 10",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                8,
+                15,
+                7,
+                9
+            ],
+            "answer": 15,
+            "compare_to": 10
+        },
+        {
+            "level": 16,
+            "question": "Masukkan 6 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 10,
+            "answer": 6
+        },
+        {
+            "level": 17,
+            "question": "8 + 15 - 7",
+            "action": "calculate",
+            "options": [
+                8,
+                15,
                 7
             ],
-            "answer": 2,
-            "compare_to": 4
+            "method": "mix",
+            "answer": 16
+        },
+        {
+            "level": 18,
+            "question": "Pilih angka yang lebih kecil dari 5",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                7,
+                3,
+                8,
+                6
+            ],
+            "answer": 3,
+            "compare_to": 5
+        },
+        {
+            "level": 19,
+            "question": "Pilih semua angka yang lebih besar dari 12",
+            "action": "tapMultiple",
+            "options": [
+                10,
+                18,
+                15,
+                8,
+                20
+            ],
+            "answer": [
+                18,
+                15,
+                20
+            ],
+            "compare_to": 12
+        },
+        {
+            "level": 20,
+            "question": "Masukkan 3 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 9,
+            "answer": 3
+        },
+        {
+            "level": 21,
+            "question": "18 + 12",
+            "action": "calculate",
+            "options": [
+                18,
+                12
+            ],
+            "method": "add",
+            "answer": 30
+        },
+        {
+            "level": 22,
+            "question": "Pilih angka yang lebih besar dari 14",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                12,
+                18,
+                10,
+                13
+            ],
+            "answer": 18,
+            "compare_to": 14
+        },
+        {
+            "level": 23,
+            "question": "Masukkan 7 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 12,
+            "answer": 7
+        },
+        {
+            "level": 24,
+            "question": "45 - 28",
+            "action": "calculate",
+            "options": [
+                45,
+                28
+            ],
+            "method": "substract",
+            "answer": 17
+        },
+        {
+            "level": 25,
+            "question": "Pilih semua angka yang lebih kecil dari 25",
+            "action": "tapMultiple",
+            "options": [
+                28,
+                22,
+                19,
+                30,
+                15
+            ],
+            "answer": [
+                22,
+                19,
+                15
+            ],
+            "compare_to": 25
+        },
+        {
+            "level": 26,
+            "question": "Pilih angka yang lebih kecil dari 9",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                12,
+                6,
+                11,
+                15
+            ],
+            "answer": 6,
+            "compare_to": 9
+        },
+        {
+            "level": 27,
+            "question": "7 × 8",
+            "action": "calculate",
+            "options": [
+                7,
+                8
+            ],
+            "method": "multiply",
+            "answer": 56
+        },
+        {
+            "level": 28,
+            "question": "Masukkan 4 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 11,
+            "answer": 4
+        },
+        {
+            "level": 29,
+            "question": "Pilih angka yang lebih besar dari 16",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                14,
+                20,
+                12,
+                15
+            ],
+            "answer": 20,
+            "compare_to": 16
+        },
+        {
+            "level": 30,
+            "question": "72 ÷ 9",
+            "action": "calculate",
+            "options": [
+                72,
+                9
+            ],
+            "method": "divide",
+            "answer": 8
+        },
+        {
+            "level": 31,
+            "question": "Pilih semua angka yang lebih besar dari 18",
+            "action": "tapMultiple",
+            "options": [
+                15,
+                22,
+                25,
+                16,
+                28
+            ],
+            "answer": [
+                22,
+                25,
+                28
+            ],
+            "compare_to": 18
+        },
+        {
+            "level": 32,
+            "question": "Masukkan 8 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 15,
+            "answer": 8
+        },
+        {
+            "level": 33,
+            "question": "(12 × 3) + 8",
+            "action": "calculate",
+            "options": [
+                12,
+                3,
+                8
+            ],
+            "method": "mix",
+            "answer": 44
+        },
+        {
+            "level": 34,
+            "question": "Pilih angka yang lebih kecil dari 15",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                18,
+                11,
+                20,
+                17
+            ],
+            "answer": 11,
+            "compare_to": 15
+        },
+        {
+            "level": 35,
+            "question": "Masukkan 5 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 13,
+            "answer": 5
+        },
+        {
+            "level": 36,
+            "question": "35 + 27",
+            "action": "calculate",
+            "options": [
+                35,
+                27
+            ],
+            "method": "add",
+            "answer": 62
+        },
+        {
+            "level": 37,
+            "question": "Pilih semua angka yang lebih kecil dari 30",
+            "action": "tapMultiple",
+            "options": [
+                35,
+                24,
+                28,
+                32,
+                19
+            ],
+            "answer": [
+                24,
+                28,
+                19
+            ],
+            "compare_to": 30
+        },
+        {
+            "level": 38,
+            "question": "Pilih angka yang lebih besar dari 22",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                19,
+                26,
+                20,
+                21
+            ],
+            "answer": 26,
+            "compare_to": 22
+        },
+        {
+            "level": 39,
+            "question": "Masukkan 9 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 16,
+            "answer": 9
+        },
+        {
+            "level": 40,
+            "question": "84 - 39",
+            "action": "calculate",
+            "options": [
+                84,
+                39
+            ],
+            "method": "substract",
+            "answer": 45
+        },
+        {
+            "level": 41,
+            "question": "Pilih angka yang lebih kecil dari 18",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                22,
+                14,
+                20,
+                25
+            ],
+            "answer": 14,
+            "compare_to": 18
+        },
+        {
+            "level": 42,
+            "question": "9 × 6",
+            "action": "calculate",
+            "options": [
+                9,
+                6
+            ],
+            "method": "multiply",
+            "answer": 54
+        },
+        {
+            "level": 43,
+            "question": "Masukkan 6 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 14,
+            "answer": 6
+        },
+        {
+            "level": 44,
+            "question": "Pilih semua angka yang lebih besar dari 25",
+            "action": "tapMultiple",
+            "options": [
+                22,
+                30,
+                28,
+                20,
+                35
+            ],
+            "answer": [
+                30,
+                28,
+                35
+            ],
+            "compare_to": 25
+        },
+        {
+            "level": 45,
+            "question": "96 ÷ 8",
+            "action": "calculate",
+            "options": [
+                96,
+                8
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 46,
+            "question": "Pilih angka yang lebih besar dari 30",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                28,
+                35,
+                25,
+                29
+            ],
+            "answer": 35,
+            "compare_to": 30
+        },
+        {
+            "level": 47,
+            "question": "Masukkan 10 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 18,
+            "answer": 10
+        },
+        {
+            "level": 48,
+            "question": "45 - (6 × 4)",
+            "action": "calculate",
+            "options": [
+                45,
+                6,
+                4
+            ],
+            "method": "mix",
+            "answer": 21
+        },
+        {
+            "level": 49,
+            "question": "Pilih semua angka yang lebih kecil dari 35",
+            "action": "tapMultiple",
+            "options": [
+                40,
+                32,
+                28,
+                38,
+                25
+            ],
+            "answer": [
+                32,
+                28,
+                25
+            ],
+            "compare_to": 35
+        },
+        {
+            "level": 50,
+            "question": "Pilih angka yang lebih kecil dari 24",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                28,
+                19,
+                26,
+                30
+            ],
+            "answer": 19,
+            "compare_to": 24
+        },
+        {
+            "level": 51,
+            "question": "Masukkan 7 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 17,
+            "answer": 7
+        },
+        {
+            "level": 52,
+            "question": "58 + 36",
+            "action": "calculate",
+            "options": [
+                58,
+                36
+            ],
+            "method": "add",
+            "answer": 94
+        },
+        {
+            "level": 53,
+            "question": "Pilih angka yang lebih besar dari 28",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                25,
+                32,
+                24,
+                27
+            ],
+            "answer": 32,
+            "compare_to": 28
+        },
+        {
+            "level": 54,
+            "question": "Masukkan 11 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 20,
+            "answer": 11
+        },
+        {
+            "level": 55,
+            "question": "92 - 47",
+            "action": "calculate",
+            "options": [
+                92,
+                47
+            ],
+            "method": "substract",
+            "answer": 45
+        },
+        {
+            "level": 56,
+            "question": "Pilih semua angka yang lebih besar dari 30",
+            "action": "tapMultiple",
+            "options": [
+                28,
+                38,
+                35,
+                25,
+                42
+            ],
+            "answer": [
+                38,
+                35,
+                42
+            ],
+            "compare_to": 30
+        },
+        {
+            "level": 57,
+            "question": "12 × 7",
+            "action": "calculate",
+            "options": [
+                12,
+                7
+            ],
+            "method": "multiply",
+            "answer": 84
+        },
+        {
+            "level": 58,
+            "question": "Masukkan 8 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 19,
+            "answer": 8
+        },
+        {
+            "level": 59,
+            "question": "Pilih angka yang lebih kecil dari 32",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                35,
+                28,
+                38,
+                40
+            ],
+            "answer": 28,
+            "compare_to": 32
+        },
+        {
+            "level": 60,
+            "question": "108 ÷ 12",
+            "action": "calculate",
+            "options": [
+                108,
+                12
+            ],
+            "method": "divide",
+            "answer": 9
+        },
+        {
+            "level": 61,
+            "question": "Pilih semua angka yang lebih kecil dari 40",
+            "action": "tapMultiple",
+            "options": [
+                45,
+                35,
+                38,
+                42,
+                28
+            ],
+            "answer": [
+                35,
+                38,
+                28
+            ],
+            "compare_to": 40
+        },
+        {
+            "level": 62,
+            "question": "Masukkan 12 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 22,
+            "answer": 12
+        },
+        {
+            "level": 63,
+            "question": "(18 ÷ 3) + 25",
+            "action": "calculate",
+            "options": [
+                18,
+                3,
+                25
+            ],
+            "method": "mix",
+            "answer": 31
+        },
+        {
+            "level": 64,
+            "question": "Pilih angka yang lebih besar dari 35",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                32,
+                40,
+                30,
+                33
+            ],
+            "answer": 40,
+            "compare_to": 35
+        },
+        {
+            "level": 65,
+            "question": "Masukkan 9 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 21,
+            "answer": 9
+        },
+        {
+            "level": 66,
+            "question": "75 + 48",
+            "action": "calculate",
+            "options": [
+                75,
+                48
+            ],
+            "method": "add",
+            "answer": 123
+        },
+        {
+            "level": 67,
+            "question": "Pilih angka yang lebih kecil dari 28",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                32,
+                24,
+                35,
+                30
+            ],
+            "answer": 24,
+            "compare_to": 28
+        },
+        {
+            "level": 68,
+            "question": "Pilih semua angka yang lebih besar dari 40",
+            "action": "tapMultiple",
+            "options": [
+                38,
+                45,
+                48,
+                35,
+                52
+            ],
+            "answer": [
+                45,
+                48,
+                52
+            ],
+            "compare_to": 40
+        },
+        {
+            "level": 69,
+            "question": "Masukkan 13 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 25,
+            "answer": 13
+        },
+        {
+            "level": 70,
+            "question": "126 - 69",
+            "action": "calculate",
+            "options": [
+                126,
+                69
+            ],
+            "method": "substract",
+            "answer": 57
+        },
+        {
+            "level": 71,
+            "question": "Pilih angka yang lebih besar dari 42",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                38,
+                48,
+                35,
+                40
+            ],
+            "answer": 48,
+            "compare_to": 42
+        },
+        {
+            "level": 72,
+            "question": "15 × 8",
+            "action": "calculate",
+            "options": [
+                15,
+                8
+            ],
+            "method": "multiply",
+            "answer": 120
+        },
+        {
+            "level": 73,
+            "question": "Masukkan 10 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 23,
+            "answer": 10
+        },
+        {
+            "level": 74,
+            "question": "Pilih semua angka yang lebih kecil dari 45",
+            "action": "tapMultiple",
+            "options": [
+                50,
+                42,
+                38,
+                48,
+                35
+            ],
+            "answer": [
+                42,
+                38,
+                35
+            ],
+            "compare_to": 45
+        },
+        {
+            "level": 75,
+            "question": "144 ÷ 16",
+            "action": "calculate",
+            "options": [
+                144,
+                16
+            ],
+            "method": "divide",
+            "answer": 9
+        },
+        {
+            "level": 76,
+            "question": "Pilih angka yang lebih kecil dari 38",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                42,
+                34,
+                45,
+                40
+            ],
+            "answer": 34,
+            "compare_to": 38
+        },
+        {
+            "level": 77,
+            "question": "Masukkan 14 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 26,
+            "answer": 14
+        },
+        {
+            "level": 78,
+            "question": "52 + (8 × 6)",
+            "action": "calculate",
+            "options": [
+                52,
+                8,
+                6
+            ],
+            "method": "mix",
+            "answer": 100
+        },
+        {
+            "level": 79,
+            "question": "Pilih angka yang lebih besar dari 45",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                42,
+                52,
+                38,
+                44
+            ],
+            "answer": 52,
+            "compare_to": 45
+        },
+        {
+            "level": 80,
+            "question": "Pilih semua angka yang lebih besar dari 50",
+            "action": "tapMultiple",
+            "options": [
+                48,
+                58,
+                55,
+                45,
+                62
+            ],
+            "answer": [
+                58,
+                55,
+                62
+            ],
+            "compare_to": 50
+        },
+        {
+            "level": 81,
+            "question": "Masukkan 11 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 24,
+            "answer": 11
+        },
+        {
+            "level": 82,
+            "question": "89 + 56",
+            "action": "calculate",
+            "options": [
+                89,
+                56
+            ],
+            "method": "add",
+            "answer": 145
+        },
+        {
+            "level": 83,
+            "question": "Pilih angka yang lebih kecil dari 42",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                48,
+                38,
+                45,
+                50
+            ],
+            "answer": 38,
+            "compare_to": 42
+        },
+        {
+            "level": 84,
+            "question": "Masukkan 15 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 28,
+            "answer": 15
+        },
+        {
+            "level": 85,
+            "question": "154 - 87",
+            "action": "calculate",
+            "options": [
+                154,
+                87
+            ],
+            "method": "substract",
+            "answer": 67
+        },
+        {
+            "level": 86,
+            "question": "Pilih semua angka yang lebih kecil dari 55",
+            "action": "tapMultiple",
+            "options": [
+                60,
+                48,
+                52,
+                58,
+                42
+            ],
+            "answer": [
+                48,
+                52,
+                42
+            ],
+            "compare_to": 55
+        },
+        {
+            "level": 87,
+            "question": "18 × 9",
+            "action": "calculate",
+            "options": [
+                18,
+                9
+            ],
+            "method": "multiply",
+            "answer": 162
+        },
+        {
+            "level": 88,
+            "question": "Masukkan 12 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 27,
+            "answer": 12
+        },
+        {
+            "level": 89,
+            "question": "Pilih angka yang lebih besar dari 52",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                48,
+                58,
+                45,
+                50
+            ],
+            "answer": 58,
+            "compare_to": 52
+        },
+        {
+            "level": 90,
+            "question": "168 ÷ 14",
+            "action": "calculate",
+            "options": [
+                168,
+                14
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 91,
+            "question": "Pilih angka yang lebih kecil dari 48",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                52,
+                44,
+                58,
+                55
+            ],
+            "answer": 44,
+            "compare_to": 48
+        },
+        {
+            "level": 92,
+            "question": "Masukkan 16 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 30,
+            "answer": 16
+        },
+        {
+            "level": 93,
+            "question": "(72 ÷ 8) - 3",
+            "action": "calculate",
+            "options": [
+                72,
+                8,
+                3
+            ],
+            "method": "mix",
+            "answer": 6
+        },
+        {
+            "level": 94,
+            "question": "Pilih semua angka yang lebih besar dari 60",
+            "action": "tapMultiple",
+            "options": [
+                55,
+                68,
+                65,
+                52,
+                72
+            ],
+            "answer": [
+                68,
+                65,
+                72
+            ],
+            "compare_to": 60
+        },
+        {
+            "level": 95,
+            "question": "Masukkan 13 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 29,
+            "answer": 13
+        },
+        {
+            "level": 96,
+            "question": "124 + 78",
+            "action": "calculate",
+            "options": [
+                124,
+                78
+            ],
+            "method": "add",
+            "answer": 202
+        },
+        {
+            "level": 97,
+            "question": "Pilih angka yang lebih besar dari 58",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                55,
+                65,
+                52,
+                56
+            ],
+            "answer": 65,
+            "compare_to": 58
+        },
+        {
+            "level": 98,
+            "question": "Masukkan 17 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 32,
+            "answer": 17
+        },
+        {
+            "level": 99,
+            "question": "186 - 98",
+            "action": "calculate",
+            "options": [
+                186,
+                98
+            ],
+            "method": "substract",
+            "answer": 88
+        },
+        {
+            "level": 100,
+            "question": "Pilih semua angka yang lebih kecil dari 65",
+            "action": "tapMultiple",
+            "options": [
+                70,
+                58,
+                62,
+                68,
+                55
+            ],
+            "answer": [
+                58,
+                62,
+                55
+            ],
+            "compare_to": 65
+        },
+        {
+            "level": 101,
+            "question": "Pilih angka yang lebih kecil dari 55",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                62,
+                48,
+                65,
+                58
+            ],
+            "answer": 48,
+            "compare_to": 55
+        },
+        {
+            "level": 102,
+            "question": "21 × 11",
+            "action": "calculate",
+            "options": [
+                21,
+                11
+            ],
+            "method": "multiply",
+            "answer": 231
+        },
+        {
+            "level": 103,
+            "question": "Masukkan 14 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 31,
+            "answer": 14
+        },
+        {
+            "level": 104,
+            "question": "Pilih angka yang lebih besar dari 62",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                58,
+                68,
+                55,
+                60
+            ],
+            "answer": 68,
+            "compare_to": 62
+        },
+        {
+            "level": 105,
+            "question": "195 ÷ 15",
+            "action": "calculate",
+            "options": [
+                195,
+                15
+            ],
+            "method": "divide",
+            "answer": 13
+        },
+        {
+            "level": 106,
+            "question": "Masukkan 18 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 35,
+            "answer": 18
+        },
+        {
+            "level": 107,
+            "question": "84 + (12 × 5)",
+            "action": "calculate",
+            "options": [
+                84,
+                12,
+                5
+            ],
+            "method": "mix",
+            "answer": 144
+        },
+        {
+            "level": 108,
+            "question": "Pilih semua angka yang lebih besar dari 70",
+            "action": "tapMultiple",
+            "options": [
+                65,
+                78,
+                75,
+                62,
+                82
+            ],
+            "answer": [
+                78,
+                75,
+                82
+            ],
+            "compare_to": 70
+        },
+        {
+            "level": 109,
+            "question": "Pilih angka yang lebih kecil dari 62",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                68,
+                58,
+                72,
+                65
+            ],
+            "answer": 58,
+            "compare_to": 62
+        },
+        {
+            "level": 110,
+            "question": "Masukkan 15 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 33,
+            "answer": 15
+        },
+        {
+            "level": 111,
+            "question": "158 + 96",
+            "action": "calculate",
+            "options": [
+                158,
+                96
+            ],
+            "method": "add",
+            "answer": 254
+        },
+        {
+            "level": 112,
+            "question": "Masukkan 19 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 36,
+            "answer": 19
+        },
+        {
+            "level": 113,
+            "question": "234 - 147",
+            "action": "calculate",
+            "options": [
+                234,
+                147
+            ],
+            "method": "substract",
+            "answer": 87
+        },
+        {
+            "level": 114,
+            "question": "Pilih angka yang lebih besar dari 68",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                65,
+                75,
+                62,
+                66
+            ],
+            "answer": 75,
+            "compare_to": 68
+        },
+        {
+            "level": 115,
+            "question": "Pilih semua angka yang lebih kecil dari 75",
+            "action": "tapMultiple",
+            "options": [
+                82,
+                68,
+                72,
+                85,
+                65
+            ],
+            "answer": [
+                68,
+                72,
+                65
+            ],
+            "compare_to": 75
+        },
+        {
+            "level": 116,
+            "question": "24 × 13",
+            "action": "calculate",
+            "options": [
+                24,
+                13
+            ],
+            "method": "multiply",
+            "answer": 312
+        },
+        {
+            "level": 117,
+            "question": "Masukkan 16 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 34,
+            "answer": 16
+        },
+        {
+            "level": 118,
+            "question": "Pilih angka yang lebih kecil dari 72",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                78,
+                68,
+                82,
+                75
+            ],
+            "answer": 68,
+            "compare_to": 72
+        },
+        {
+            "level": 119,
+            "question": "216 ÷ 18",
+            "action": "calculate",
+            "options": [
+                216,
+                18
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 120,
+            "question": "Masukkan 20 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 38,
+            "answer": 20
+        },
+        {
+            "level": 121,
+            "question": "(96 ÷ 6) + 28",
+            "action": "calculate",
+            "options": [
+                96,
+                6,
+                28
+            ],
+            "method": "mix",
+            "answer": 44
+        },
+        {
+            "level": 122,
+            "question": "Pilih semua angka yang lebih besar dari 80",
+            "action": "tapMultiple",
+            "options": [
+                75,
+                88,
+                85,
+                72,
+                92
+            ],
+            "answer": [
+                88,
+                85,
+                92
+            ],
+            "compare_to": 80
+        },
+        {
+            "level": 123,
+            "question": "Pilih angka yang lebih besar dari 75",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                72,
+                82,
+                68,
+                74
+            ],
+            "answer": 82,
+            "compare_to": 75
+        },
+        {
+            "level": 124,
+            "question": "Masukkan 17 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 37,
+            "answer": 17
+        },
+        {
+            "level": 125,
+            "question": "189 + 124",
+            "action": "calculate",
+            "options": [
+                189,
+                124
+            ],
+            "method": "add",
+            "answer": 313
+        },
+        {
+            "level": 126,
+            "question": "Masukkan 21 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 40,
+            "answer": 21
+        },
+        {
+            "level": 127,
+            "question": "276 - 189",
+            "action": "calculate",
+            "options": [
+                276,
+                189
+            ],
+            "method": "substract",
+            "answer": 87
+        },
+        {
+            "level": 128,
+            "question": "Pilih angka yang lebih kecil dari 78",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                82,
+                74,
+                88,
+                85
+            ],
+            "answer": 74,
+            "compare_to": 78
+        },
+        {
+            "level": 129,
+            "question": "Pilih semua angka yang lebih kecil dari 85",
+            "action": "tapMultiple",
+            "options": [
+                92,
+                78,
+                82,
+                95,
+                75
+            ],
+            "answer": [
+                78,
+                82,
+                75
+            ],
+            "compare_to": 85
+        },
+        {
+            "level": 130,
+            "question": "27 × 14",
+            "action": "calculate",
+            "options": [
+                27,
+                14
+            ],
+            "method": "multiply",
+            "answer": 378
+        },
+        {
+            "level": 131,
+            "question": "Masukkan 18 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 39,
+            "answer": 18
+        },
+        {
+            "level": 132,
+            "question": "Pilih angka yang lebih besar dari 82",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                78,
+                88,
+                75,
+                80
+            ],
+            "answer": 88,
+            "compare_to": 82
+        },
+        {
+            "level": 133,
+            "question": "252 ÷ 21",
+            "action": "calculate",
+            "options": [
+                252,
+                21
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 134,
+            "question": "Masukkan 22 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 42,
+            "answer": 22
+        },
+        {
+            "level": 135,
+            "question": "156 - (15 × 8)",
+            "action": "calculate",
+            "options": [
+                156,
+                15,
+                8
+            ],
+            "method": "mix",
+            "answer": 36
+        },
+        {
+            "level": 136,
+            "question": "Pilih semua angka yang lebih besar dari 90",
+            "action": "tapMultiple",
+            "options": [
+                85,
+                98,
+                95,
+                82,
+                105
+            ],
+            "answer": [
+                98,
+                95,
+                105
+            ],
+            "compare_to": 90
+        },
+        {
+            "level": 137,
+            "question": "Pilih angka yang lebih kecil dari 88",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                92,
+                84,
+                95,
+                90
+            ],
+            "answer": 84,
+            "compare_to": 88
+        },
+        {
+            "level": 138,
+            "question": "Masukkan 19 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 41,
+            "answer": 19
+        },
+        {
+            "level": 139,
+            "question": "245 + 178",
+            "action": "calculate",
+            "options": [
+                245,
+                178
+            ],
+            "method": "add",
+            "answer": 423
+        },
+        {
+            "level": 140,
+            "question": "Masukkan 23 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 44,
+            "answer": 23
+        },
+        {
+            "level": 141,
+            "question": "324 - 248",
+            "action": "calculate",
+            "options": [
+                324,
+                248
+            ],
+            "method": "substract",
+            "answer": 76
+        },
+        {
+            "level": 142,
+            "question": "Pilih angka yang lebih besar dari 88",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                85,
+                95,
+                82,
+                86
+            ],
+            "answer": 95,
+            "compare_to": 88
+        },
+        {
+            "level": 143,
+            "question": "Pilih semua angka yang lebih kecil dari 95",
+            "action": "tapMultiple",
+            "options": [
+                102,
+                88,
+                92,
+                105,
+                85
+            ],
+            "answer": [
+                88,
+                92,
+                85
+            ],
+            "compare_to": 95
+        },
+        {
+            "level": 144,
+            "question": "32 × 16",
+            "action": "calculate",
+            "options": [
+                32,
+                16
+            ],
+            "method": "multiply",
+            "answer": 512
+        },
+        {
+            "level": 145,
+            "question": "Masukkan 20 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 43,
+            "answer": 20
+        },
+        {
+            "level": 146,
+            "question": "Pilih angka yang lebih kecil dari 94",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                98,
+                88,
+                102,
+                96
+            ],
+            "answer": 88,
+            "compare_to": 94
+        },
+        {
+            "level": 147,
+            "question": "288 ÷ 24",
+            "action": "calculate",
+            "options": [
+                288,
+                24
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 148,
+            "question": "Masukkan 24 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 46,
+            "answer": 24
+        },
+        {
+            "level": 149,
+            "question": "(144 ÷ 12) + 58",
+            "action": "calculate",
+            "options": [
+                144,
+                12,
+                58
+            ],
+            "method": "mix",
+            "answer": 70
+        },
+        {
+            "level": 150,
+            "question": "Pilih angka yang lebih besar dari 95",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                92,
+                102,
+                88,
+                94
+            ],
+            "answer": 102,
+            "compare_to": 95
+        },
+        {
+            "level": 151,
+            "question": "Pilih semua angka yang lebih besar dari 100",
+            "action": "tapMultiple",
+            "options": [
+                95,
+                108,
+                105,
+                92,
+                115
+            ],
+            "answer": [
+                108,
+                105,
+                115
+            ],
+            "compare_to": 100
+        },
+        {
+            "level": 152,
+            "question": "Masukkan 21 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 45,
+            "answer": 21
+        },
+        {
+            "level": 153,
+            "question": "286 + 195",
+            "action": "calculate",
+            "options": [
+                286,
+                195
+            ],
+            "method": "add",
+            "answer": 481
+        },
+        {
+            "level": 154,
+            "question": "Pilih angka yang lebih kecil dari 102",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                108,
+                98,
+                112,
+                105
+            ],
+            "answer": 98,
+            "compare_to": 102
+        },
+        {
+            "level": 155,
+            "question": "Masukkan 25 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 48,
+            "answer": 25
+        },
+        {
+            "level": 156,
+            "question": "378 - 294",
+            "action": "calculate",
+            "options": [
+                378,
+                294
+            ],
+            "method": "substract",
+            "answer": 84
+        },
+        {
+            "level": 157,
+            "question": "Pilih semua angka yang lebih kecil dari 105",
+            "action": "tapMultiple",
+            "options": [
+                112,
+                98,
+                102,
+                115,
+                95
+            ],
+            "answer": [
+                98,
+                102,
+                95
+            ],
+            "compare_to": 105
+        },
+        {
+            "level": 158,
+            "question": "35 × 18",
+            "action": "calculate",
+            "options": [
+                35,
+                18
+            ],
+            "method": "multiply",
+            "answer": 630
+        },
+        {
+            "level": 159,
+            "question": "Masukkan 22 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 47,
+            "answer": 22
+        },
+        {
+            "level": 160,
+            "question": "Pilih angka yang lebih besar dari 102",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                98,
+                108,
+                95,
+                100
+            ],
+            "answer": 108,
+            "compare_to": 102
+        },
+        {
+            "level": 161,
+            "question": "336 ÷ 28",
+            "action": "calculate",
+            "options": [
+                336,
+                28
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 162,
+            "question": "Masukkan 26 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 50,
+            "answer": 26
+        },
+        {
+            "level": 163,
+            "question": "248 + (18 × 7)",
+            "action": "calculate",
+            "options": [
+                248,
+                18,
+                7
+            ],
+            "method": "mix",
+            "answer": 374
+        },
+        {
+            "level": 164,
+            "question": "Pilih angka yang lebih kecil dari 108",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                115,
+                104,
+                122,
+                118
+            ],
+            "answer": 104,
+            "compare_to": 108
+        },
+        {
+            "level": 165,
+            "question": "Pilih semua angka yang lebih besar dari 110",
+            "action": "tapMultiple",
+            "options": [
+                105,
+                118,
+                115,
+                102,
+                125
+            ],
+            "answer": [
+                118,
+                115,
+                125
+            ],
+            "compare_to": 110
+        },
+        {
+            "level": 166,
+            "question": "Masukkan 23 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 49,
+            "answer": 23
+        },
+        {
+            "level": 167,
+            "question": "342 + 258",
+            "action": "calculate",
+            "options": [
+                342,
+                258
+            ],
+            "method": "add",
+            "answer": 600
+        },
+        {
+            "level": 168,
+            "question": "Masukkan 27 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 52,
+            "answer": 27
+        },
+        {
+            "level": 169,
+            "question": "456 - 379",
+            "action": "calculate",
+            "options": [
+                456,
+                379
+            ],
+            "method": "substract",
+            "answer": 77
+        },
+        {
+            "level": 170,
+            "question": "Pilih angka yang lebih besar dari 112",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                108,
+                118,
+                105,
+                110
+            ],
+            "answer": 118,
+            "compare_to": 112
+        },
+        {
+            "level": 171,
+            "question": "Pilih semua angka yang lebih kecil dari 115",
+            "action": "tapMultiple",
+            "options": [
+                122,
+                108,
+                112,
+                125,
+                105
+            ],
+            "answer": [
+                108,
+                112,
+                105
+            ],
+            "compare_to": 115
+        },
+        {
+            "level": 172,
+            "question": "38 × 21",
+            "action": "calculate",
+            "options": [
+                38,
+                21
+            ],
+            "method": "multiply",
+            "answer": 798
+        },
+        {
+            "level": 173,
+            "question": "Masukkan 24 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 51,
+            "answer": 24
+        },
+        {
+            "level": 174,
+            "question": "Pilih angka yang lebih kecil dari 118",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                125,
+                114,
+                132,
+                128
+            ],
+            "answer": 114,
+            "compare_to": 118
+        },
+        {
+            "level": 175,
+            "question": "384 ÷ 32",
+            "action": "calculate",
+            "options": [
+                384,
+                32
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 176,
+            "question": "Masukkan 28 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 54,
+            "answer": 28
+        },
+        {
+            "level": 177,
+            "question": "(168 ÷ 14) - 8",
+            "action": "calculate",
+            "options": [
+                168,
+                14,
+                8
+            ],
+            "method": "mix",
+            "answer": 4
+        },
+        {
+            "level": 178,
+            "question": "Pilih semua angka yang lebih besar dari 120",
+            "action": "tapMultiple",
+            "options": [
+                115,
+                128,
+                125,
+                112,
+                135
+            ],
+            "answer": [
+                128,
+                125,
+                135
+            ],
+            "compare_to": 120
+        },
+        {
+            "level": 179,
+            "question": "Pilih angka yang lebih besar dari 118",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                115,
+                125,
+                112,
+                116
+            ],
+            "answer": 125,
+            "compare_to": 118
+        },
+        {
+            "level": 180,
+            "question": "Masukkan 25 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 53,
+            "answer": 25
+        },
+        {
+            "level": 181,
+            "question": "398 + 297",
+            "action": "calculate",
+            "options": [
+                398,
+                297
+            ],
+            "method": "add",
+            "answer": 695
+        },
+        {
+            "level": 182,
+            "question": "Pilih angka yang lebih kecil dari 125",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                132,
+                118,
+                138,
+                128
+            ],
+            "answer": 118,
+            "compare_to": 125
+        },
+        {
+            "level": 183,
+            "question": "Masukkan 29 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 56,
+            "answer": 29
+        },
+        {
+            "level": 184,
+            "question": "524 - 447",
+            "action": "calculate",
+            "options": [
+                524,
+                447
+            ],
+            "method": "substract",
+            "answer": 77
+        },
+        {
+            "level": 185,
+            "question": "Pilih semua angka yang lebih kecil dari 125",
+            "action": "tapMultiple",
+            "options": [
+                132,
+                118,
+                122,
+                135,
+                115
+            ],
+            "answer": [
+                118,
+                122,
+                115
+            ],
+            "compare_to": 125
+        },
+        {
+            "level": 186,
+            "question": "42 × 24",
+            "action": "calculate",
+            "options": [
+                42,
+                24
+            ],
+            "method": "multiply",
+            "answer": 1008
+        },
+        {
+            "level": 187,
+            "question": "Masukkan 26 banana ke dalam keranjang",
+            "action": "drag",
+            "object": "banana",
+            "available": 55,
+            "answer": 26
+        },
+        {
+            "level": 188,
+            "question": "Pilih angka yang lebih besar dari 125",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                122,
+                132,
+                118,
+                124
+            ],
+            "answer": 132,
+            "compare_to": 125
+        },
+        {
+            "level": 189,
+            "question": "432 ÷ 36",
+            "action": "calculate",
+            "options": [
+                432,
+                36
+            ],
+            "method": "divide",
+            "answer": 12
+        },
+        {
+            "level": 190,
+            "question": "Masukkan 30 apple ke dalam keranjang",
+            "action": "drag",
+            "object": "apple",
+            "available": 58,
+            "answer": 30
+        },
+        {
+            "level": 191,
+            "question": "356 + (24 × 9)",
+            "action": "calculate",
+            "options": [
+                356,
+                24,
+                9
+            ],
+            "method": "mix",
+            "answer": 572
+        },
+        {
+            "level": 192,
+            "question": "Pilih angka yang lebih kecil dari 132",
+            "action": "tap",
+            "action_tap_type": "lesser",
+            "options": [
+                138,
+                128,
+                145,
+                135
+            ],
+            "answer": 128,
+            "compare_to": 132
+        },
+        {
+            "level": 193,
+            "question": "Pilih semua angka yang lebih besar dari 130",
+            "action": "tapMultiple",
+            "options": [
+                125,
+                138,
+                135,
+                122,
+                145
+            ],
+            "answer": [
+                138,
+                135,
+                145
+            ],
+            "compare_to": 130
+        },
+        {
+            "level": 194,
+            "question": "Masukkan 27 orange ke dalam keranjang",
+            "action": "drag",
+            "object": "orange",
+            "available": 57,
+            "answer": 27
+        },
+        {
+            "level": 195,
+            "question": "456 + 389",
+            "action": "calculate",
+            "options": [
+                456,
+                389
+            ],
+            "method": "add",
+            "answer": 845
+        },
+        {
+            "level": 196,
+            "question": "Masukkan 31 grape ke dalam keranjang",
+            "action": "drag",
+            "object": "grape",
+            "available": 60,
+            "answer": 31
+        },
+        {
+            "level": 197,
+            "question": "612 - 538",
+            "action": "calculate",
+            "options": [
+                612,
+                538
+            ],
+            "method": "substract",
+            "answer": 74
+        },
+        {
+            "level": 198,
+            "question": "Pilih angka yang lebih besar dari 135",
+            "action": "tap",
+            "action_tap_type": "greater",
+            "options": [
+                132,
+                142,
+                128,
+                134
+            ],
+            "answer": 142,
+            "compare_to": 135
+        },
+        {
+            "level": 199,
+            "question": "45 × 26",
+            "action": "calculate",
+            "options": [
+                45,
+                26
+            ],
+            "method": "multiply",
+            "answer": 1170
+        },
+        {
+            "level": 200,
+            "question": "(540 ÷ 15) - 18",
+            "action": "calculate",
+            "options": [
+                540,
+                15,
+                18
+            ],
+            "method": "mix",
+            "answer": 18
         }
     ]
 }

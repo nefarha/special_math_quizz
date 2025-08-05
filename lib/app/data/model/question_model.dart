@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:special_math_quizz/app/data/enums/e_action_calculate_type.dart';
+import 'package:special_math_quizz/app/data/enums/e_action_tap_type.dart';
 import 'package:special_math_quizz/app/data/enums/e_object_type.dart';
 import 'package:special_math_quizz/app/data/enums/e_quiz_type.dart';
 
@@ -21,6 +23,7 @@ sealed class QuestionModel with _$QuestionModel {
     required String question,
     required EQuizType action,
     required List<int> options,
+    required EActionTapType actionTapType,
     required int answer,
     required int compareTo,
   }) = Tap;
@@ -33,6 +36,15 @@ sealed class QuestionModel with _$QuestionModel {
     required List<int> answer,
     required int compareTo,
   }) = TapMultiple;
+
+  const factory QuestionModel.calculate({
+    required int level,
+    required String question,
+    required EQuizType action,
+    required List<int> options,
+    required EActionCalculateType method,
+    required int answer,
+  }) = Calculate;
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) =>
       _$QuestionModelFromJson(json);

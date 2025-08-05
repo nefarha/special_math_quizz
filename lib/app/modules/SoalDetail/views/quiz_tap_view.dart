@@ -17,7 +17,7 @@ class QuizTapView extends GetView<SoalDetailController> {
                 behavior: HitTestBehavior.translucent,
                 onTap: () async {
                   await controller.submitTapAnswer(
-                      value: e, comparedTo: model.compareTo);
+                      context: context, value: e, comparedTo: model.compareTo);
                 },
                 child: Container(
                   height: 80,

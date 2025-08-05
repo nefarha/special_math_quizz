@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_confetti/flutter_confetti.dart';
+import 'package:fpdart/fpdart.dart';
 
 import 'package:get/get.dart';
 import 'package:glass/glass.dart';
@@ -9,22 +11,32 @@ import 'package:special_math_quizz/app/data/utils/asset_urls.dart';
 import 'package:special_math_quizz/app/data/utils/colour_palette.dart';
 import 'package:special_math_quizz/app/data/utils/common_utils.dart';
 import 'package:special_math_quizz/app/data/utils/public_mixin.dart';
+import 'dart:math';
 
 import '../controllers/soal_detail_controller.dart';
 
 part 'quiz_drag_view.dart';
 part 'quiz_tap_view.dart';
 part 'quiz_comparions_view.dart';
+part 'quiz_calculate_view.dart';
 
 class SoalDetailView extends GetView<SoalDetailController> {
   const SoalDetailView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: ColourPalette.creamColour,
-        title: Text(controller.model.level.toString(),
-            style: CommonUtils.titleStyle),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Level ${controller.model.level}".toString(),
+          style: CommonUtils.titleStyle.copyWith(
+            color: ColourPalette.creamColour,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Obx(
@@ -38,42 +50,50 @@ class SoalDetailView extends GetView<SoalDetailController> {
                 fit: BoxFit.cover,
               ),
             ),
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  spacing: 20,
-                  children: [
-                    SizedBox(),
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: ColourPalette.creamColour.withAlpha(180),
-                        borderRadius: BorderRadius.circular(25),
+            SafeArea(
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    spacing: 20,
+                    children: [
+                      SizedBox(),
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: ColourPalette.creamColour.withAlpha(180),
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Text(
+                          controller.model.action == EQuizType.calculate
+                              ? 'Berapa hasil dari : ${controller.model.question}'
+                              : controller.model.question,
+                          style: CommonUtils.titleStyle
+                              .copyWith(color: Colors.black),
+                        ),
+                      ).asGlass(
+                        clipBehaviour: Clip.antiAlias,
+                        clipBorderRadius: BorderRadius.circular(25),
+                        blurX: 8,
+                        blurY: 8,
                       ),
-                      child: Text(
-                        controller.model.question,
-                        style: CommonUtils.titleStyle
-                            .copyWith(color: Colors.black),
-                      ),
-                    ).asGlass(
-                      clipBehaviour: Clip.antiAlias,
-                      clipBorderRadius: BorderRadius.circular(25),
-                      blurX: 8,
-                      blurY: 8,
-                    ),
-                    Flexible(
-                      child: switch (controller.model.action) {
-                        EQuizType.drag => QuizDragView(
-                            model: controller.model as Drag,
-                          ),
-                        EQuizType.tap =>
-                          QuizTapView(model: controller.model as Tap),
-                        EQuizType.tapMultiple => QuizMultipleView(),
-                      },
-                    )
-                  ],
-                )),
+                      Flexible(
+                        child: switch (controller.model.action) {
+                          EQuizType.drag => QuizDragView(
+                              model: controller.model as Drag,
+                            ),
+                          EQuizType.tap =>
+                            QuizTapView(model: controller.model as Tap),
+                          EQuizType.tapMultiple => QuizMultipleView(
+                              model: controller.model as TapMultiple,
+                            ),
+                          EQuizType.calculate => QuizCalculateView(
+                              model: controller.model as Calculate),
+                        },
+                      )
+                    ],
+                  )),
+            ),
             if (controller.showWrongBanner.value)
               Center(
                 child: Container(

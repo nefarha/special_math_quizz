@@ -99,7 +99,7 @@ class QuizListView extends GetView<QuizListController> {
                                           )
                                         : Text(
                                             model.level.toString(),
-                                            style: CommonUtils.headerStyle
+                                            style: CommonUtils.titleStyle
                                                 .copyWith(
                                                     color: Colors.white,
                                                     fontWeight:
