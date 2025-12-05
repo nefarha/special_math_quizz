@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_confetti/flutter_confetti.dart';
-import 'package:fpdart/fpdart.dart';
 
 import 'package:get/get.dart';
 import 'package:glass/glass.dart';
@@ -10,8 +8,6 @@ import 'package:special_math_quizz/app/data/model/question_model.dart';
 import 'package:special_math_quizz/app/data/utils/asset_urls.dart';
 import 'package:special_math_quizz/app/data/utils/colour_palette.dart';
 import 'package:special_math_quizz/app/data/utils/common_utils.dart';
-import 'package:special_math_quizz/app/data/utils/public_mixin.dart';
-import 'dart:math';
 
 import '../controllers/soal_detail_controller.dart';
 

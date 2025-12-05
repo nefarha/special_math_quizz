@@ -2,7 +2,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_confetti/flutter_confetti.dart';
-import 'package:fpdart/fpdart.dart';
 import 'package:get/get.dart';
 import 'package:special_math_quizz/app/data/enums/e_action_tap_type.dart';
 import 'package:special_math_quizz/app/data/enums/e_quiz_type.dart';
@@ -10,7 +9,6 @@ import 'package:special_math_quizz/app/data/model/question_model.dart';
 import 'package:special_math_quizz/app/data/repositories/quizz_repositories.dart';
 import 'package:special_math_quizz/app/data/utils/asset_urls.dart';
 import 'package:special_math_quizz/app/data/utils/public_mixin.dart';
-import 'dart:collection';
 
 class SoalDetailController extends GetxController with LoadingState {
   final QuestionModel model = Get.arguments as QuestionModel;
@@ -168,8 +166,6 @@ class SoalDetailController extends GetxController with LoadingState {
     isLoading.value = true;
 
     var answer = num.tryParse(answerController.text);
-    print(answer);
-    print(model.answer);
 
     if (answer == null) {
       await _audioPlayer.play(AssetSource(AssetUrls.failSound), volume: 1.0);

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'package:special_math_quizz/quizz_app.dart';

@@ -43,7 +43,7 @@ class HomeView extends GetView<HomeController> {
 }
 
 class _PlayButton extends GetView<HomeController> {
-  const _PlayButton({super.key});
+  const _PlayButton();
 
   @override
   Widget build(BuildContext context) {
