@@ -50,7 +50,6 @@ class SoalDetailController extends GetxController with LoadingState {
         (l) async {
           await _audioPlayer.play(AssetSource(AssetUrls.failSound),
               volume: 1.0);
-          debugPrint('assda $l');
         },
         (r) async {
           await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
@@ -89,7 +88,6 @@ class SoalDetailController extends GetxController with LoadingState {
         (l) async {
           await _audioPlayer.play(AssetSource(AssetUrls.failSound),
               volume: 1.0);
-          debugPrint('assda $l');
         },
         (r) async {
           await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
@@ -137,7 +135,6 @@ class SoalDetailController extends GetxController with LoadingState {
           (l) async {
             await _audioPlayer.play(AssetSource(AssetUrls.failSound),
                 volume: 1.0);
-            debugPrint('assda $l');
           },
           (r) async {
             await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
@@ -181,7 +178,6 @@ class SoalDetailController extends GetxController with LoadingState {
         (l) async {
           await _audioPlayer.play(AssetSource(AssetUrls.failSound),
               volume: 1.0);
-          debugPrint('assda $l');
         },
         (r) async {
           await _audioPlayer.play(AssetSource(AssetUrls.confettiSound),
